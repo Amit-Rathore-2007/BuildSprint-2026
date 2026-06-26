@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Buzz</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header>
+
+        <div class="navbar">
+
+            <!-- Logo -->
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+
+            <!-- Events -->
+            <div class="events-container">
+
+                <button class="arrow left">&#10094;</button>
+
+                <div class="events" id="events">
+                    <div class="event">Upcoming Events!</div>
+                    <div class="event">Hackathon</div>
+                    <div class="event">Workshop</div>
+                    <div class="event">Seminar</div>
+                    <div class="event">Coding Contest</div>
+                </div>
+
+                <button class="arrow right">&#10095;</button>
+
+            </div>
+            
+
+            <!-- Profile -->
+            <div class="profile">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <label for="profile">About Me</label>
+
+                <select id="profile">
+                    <option selected disabled>Select</option>
+                    <option>Profile</option>
+                    <option>Achievements</option>
+                    <option>Status</option>
+                    <option>Settings</option>
+                    <option>Logout</option>
+                </select>
+
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="container">
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <!-- Student Section -->
+
+            <div class="Student">
+
+                <h2>Student</h2>
+
+                <a href="#">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Event Calendar</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Campus Buzz</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-file-circle-exclamation"></i>
+                    <span>Complaints</span>
+                </a>
+
+            </div>
+
+            <!-- Club / Committee Section -->
+
+            <div class="members">
+
+                <h2>Club / Committee</h2>
+
+                <a href="#">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Members</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Event Calendar</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-file-circle-exclamation"></i>
+                    <span>Complaints</span>
+                </a>
+
+            </div>
+
+            <!-- Admin Section -->
+
+            <div class="admin">
+
+                <h2>Admin</h2>
+
+                <a href="#">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span>Manage Users</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Manage Events</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>Complaints</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="content">
+
+            <h1>Welcome to College Buzz</h1>
+
+            <p>
+                This is the main content area. You can display announcements,
+                upcoming events, notices, club information, complaint status,
+                and other dashboard components here.
+            </p>
+
+        </div>
+
+    </div>
+<script src="script.js"></script>
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h3>College Buzz</h3>
+            <p>Your one-stop platform for campus events, clubs, notices, and announcements.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Events</a>
+            <a href="#">Complaints</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 College Buzz | NIT Raipur | All Rights Reserved
+    </p>
+
+</footer>
+</body>
+</html>
