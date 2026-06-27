@@ -1,0 +1,276 @@
+/* ===========================
+   EVENT CALENDAR PAGE
+=========================== */
+
+.calendar-page {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h1 {
+    margin: 0;
+    color: #222;
+}
+
+.create-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.create-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   TOOLBAR
+=========================== */
+
+.toolbar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.toolbar input,
+.toolbar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.toolbar input {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* ===========================
+   CALENDAR
+=========================== */
+
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.react-calendar {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+/* ===========================
+   EVENTS
+=========================== */
+
+.events-section h2 {
+    margin-bottom: 20px;
+}
+
+.empty-events {
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    color: #777;
+}
+
+/* ===========================
+   EVENT CARD
+=========================== */
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.event-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-category {
+    background: #2563eb;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.event-description {
+    margin: 15px 0;
+    color: #555;
+}
+
+.event-info p {
+    margin: 8px 0;
+}
+
+.event-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.interest-btn,
+.post-btn {
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+}
+
+.interest-btn {
+    background: #16a34a;
+}
+
+.post-btn {
+    background: #2563eb;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    width: 550px;
+    max-width: 95%;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.modal textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.time-row {
+    display: flex;
+    gap: 10px;
+}
+
+.time-row input {
+    flex: 1;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cancel-btn,
+.submit-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.cancel-btn {
+    background: #6b7280;
+}
+
+.submit-btn {
+    background: #2563eb;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .event-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .event-actions {
+        flex-direction: column;
+    }
+
+    .time-row {
+        flex-direction: column;
+    }
+
+    .modal {
+        width: 95%;
+    }
+}
