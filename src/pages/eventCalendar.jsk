@@ -1,0 +1,151 @@
+import { useEffect, useState } from "react";
+import Calendar from "react-calendar";
+import axios from "axios";
+import "react-calendar/dist/Calendar.css";
+import "../css/calendar.css";
+
+import EventCard from "../components/EventCard";
+import CreateEventModal from "../components/CreateEventModal";
+
+export default function EventCalendar() {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [events, setEvents] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
+  const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  useEffect(() => {
+    filterEvents();
+  }, [events, selectedDate, search, category]);
+
+  const fetchEvents = async () => {
+    try {
+      setLoading(true);
+
+      const res = await axios.get("/api/events");
+
+      setEvents(res.data);
+    } catch (err) {
+      console.error(err);
+      alert("Unable to load events.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filterEvents = () => {
+    let list = events.filter((event) => {
+      return (
+        new Date(event.date).toDateString() ===
+        selectedDate.toDateString()
+      );
+    });
+
+    if (category !== "All") {
+      list = list.filter(
+        (event) => event.category === category
+      );
+    }
+
+    if (search.trim() !== "") {
+      list = list.filter((event) =>
+        event.title
+          .toLowerCase()
+          .includes(search.toLowerCase())
+      );
+    }
+
+    setFilteredEvents(list);
+  };
+
+  return (
+    <div className="calendar-page">
+
+      <div className="calendar-header">
+
+        <h1>Campus Event Calendar</h1>
+
+        <button
+          className="create-btn"
+          onClick={() => setShowModal(true)}
+        >
+          + Create Event
+        </button>
+
+      </div>
+
+      <div className="toolbar">
+
+        <input
+          type="text"
+          placeholder="Search Event..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option>All</option>
+          <option>Technical</option>
+          <option>Cultural</option>
+          <option>Sports</option>
+          <option>Workshop</option>
+          <option>Seminar</option>
+          <option>Other</option>
+        </select>
+
+      </div>
+
+      <div className="calendar-container">
+
+        <Calendar
+          value={selectedDate}
+          onChange={setSelectedDate}
+        />
+
+      </div>
+
+      <div className="events-section">
+
+        <h2>
+          Events on {selectedDate.toDateString()}
+        </h2>
+
+        {loading ? (
+          <p>Loading...</p>
+        ) : filteredEvents.length === 0 ? (
+          <div className="empty-events">
+            <h3>No Events</h3>
+            <p>
+              There are no events scheduled for this day.
+            </p>
+          </div>
+        ) : (
+          filteredEvents.map((event) => (
+            <EventCard
+              key={event._id}
+              event={event}
+            />
+          ))
+        )}
+
+      </div>
+
+      {showModal && (
+        <CreateEventModal
+          close={() => setShowModal(false)}
+          refresh={fetchEvents}
+        />
+      )}
+
+    </div>
+  );
+}
