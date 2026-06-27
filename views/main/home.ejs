@@ -1,0 +1,147 @@
+<% layout("./layouts/homeLayout") %>
+
+<link rel="stylesheet" href="/css/home.css">
+
+<div class="feed-page">
+
+    <!-- ===================== FEED ===================== -->
+
+    <main class="feed-container">
+
+        <!-- Search -->
+
+        <div class="feed-top">
+
+            <div class="feed-title">
+
+                <h2>Campus Feed</h2>
+
+                <p>Discover what's happening around your campus.</p>
+
+            </div>
+
+            <div class="feed-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search title, hashtag or location..."
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- POSTS -->
+
+        <div id="postsContainer" class="posts-container">
+
+
+            <!-- Post 1 -->
+
+            <%- include("../partials/postCard",{
+
+                author:"Amit Kumar",
+
+                avatar:"/images/profile.png",
+
+                title:"🍕 Domino's Pizza Split",
+
+                description:"Need three more people to split a Domino's order. Planning to place the order in 20 minutes.",
+
+                hashtag:"#foodsplit",
+
+                location:"Hostel 4",
+
+                image:"/images/demo1.jpg",
+
+                joined:2,
+
+                total:5,
+
+                likes:16,
+
+                comments:4,
+
+                created:"2 min ago"
+
+            }) %>
+
+
+
+            <!-- Post 2 -->
+
+            <%- include("../partials/postCard",{
+
+                author:"Rahul Singh",
+
+                avatar:"/images/profile.png",
+
+                title:"🚖 Cab to Airport",
+
+                description:"Leaving for the airport at 5 PM. Two seats are available.",
+
+                hashtag:"#cabsplit",
+
+                location:"Main Gate",
+
+                image:"/images/demo2.jpg",
+
+                joined:3,
+
+                total:5,
+
+                likes:8,
+
+                comments:2,
+
+                created:"10 min ago"
+
+            }) %>
+
+
+
+            <!-- More posts will come dynamically -->
+
+        </div>
+
+    </main>
+
+
+
+
+
+
+    <!-- FLOATING BUTTON -->
+
+    <button id="newPostBtn" class="floating-btn">
+
+        <i class="fa-solid fa-plus"></i>
+
+        <span>
+
+            New Post
+
+        </span>
+
+    </button>
+
+
+
+
+
+
+    <!-- CREATE POST MODAL -->
+
+    <%- include("../partials/createPostModal") %>
+
+
+</div>
+
+
+
+<script src="/js/home.js"></script>

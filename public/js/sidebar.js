@@ -1,0 +1,1 @@
+let sidebarBtns = document.querySelectorAll(".sidebar-cont .sidebar .sidebar-btn");

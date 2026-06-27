@@ -1,0 +1,34 @@
+<% layout("./layouts/homeLayout") %>
+
+<div class="box-cont">
+    <form action="/complaint" method="post" id="complaintForm" class="dis-none" enctype="multipart/form-data">
+        <div id="form-cont">
+            <div id="cancel-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#222222"><path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z"/></svg>
+            </div>
+            <input name="complaint[title]" type="text" placeholder="Complaint title">
+            <label for="category">Complaint Category</label>
+            <select id="category" name="complaint[category]">
+                <option value="" selected disabled>Select Category</option>
+                <option value="hostel">Hostel</option>
+                <option value="infrastructure">Campus Infrastructure</option>
+                <option value="academics">Academics</option>
+                <option value="faculty">Faculty</option>
+                <option value="library">Library</option>
+                <option value="canteen">Canteen</option>
+                <option value="transport">Transport</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea name="complaint[description]" placeholder="About your complaint..."></textarea>
+            <input name="complaint[image]" type="file" multiple>
+            <button type="submit">Submit</button>
+            <p id="extra-text">* Your identity will not be visible to others.</p>
+        </div>
+    </form>
+    <button class="add-complaint">Add complaint</button>
+</div>
+
+
+
+<link href="/complaint.css" rel="stylesheet">
+<script src="add-complaint.js"></script>

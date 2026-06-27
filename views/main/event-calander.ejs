@@ -1,0 +1,116 @@
+<% layout("./layouts/homeLayout") %>
+
+    <div class="container">
+
+        <h1>📅 Campus Buzz Event Calendar</h1>
+
+        <div class="top-bar">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search events..."
+            >
+
+            <select id="category">
+                <option value="All">All Categories</option>
+                <option value="Technical">Technical</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Sports">Sports</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Seminar">Seminar</option>
+            </select>
+
+            <button id="openModal">
+                + Create Event
+            </button>
+
+        </div>
+
+        <div id="events"></div>
+
+    </div>
+
+    <!-- Create Event Modal -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal">&times;</span>
+
+            <h2>Create Event</h2>
+
+            <form id="eventForm">
+
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="Event Title"
+                    required
+                >
+
+                <textarea
+                    id="description"
+                    placeholder="Description"
+                    required
+                ></textarea>
+
+                <input
+                    id="date"
+                    type="date"
+                    required
+                >
+
+                <div class="time-row">
+
+                    <input
+                        id="startTime"
+                        type="time"
+                        required
+                    >
+
+                    <input
+                        id="endTime"
+                        type="time"
+                        required
+                    >
+
+                </div>
+
+                <input
+                    id="venue"
+                    type="text"
+                    placeholder="Venue"
+                    required
+                >
+
+                <input
+                    id="organizer"
+                    type="text"
+                    placeholder="Organizer"
+                    required
+                >
+
+                <select id="eventCategory">
+
+                    <option>Technical</option>
+                    <option>Workshop</option>
+                    <option>Sports</option>
+                    <option>Cultural</option>
+                    <option>Seminar</option>
+
+                </select>
+
+                <button type="submit">
+                    Save Event
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <link href="event-calander.css" rel="stylesheet">
+<script src="event-calander.js"></script>

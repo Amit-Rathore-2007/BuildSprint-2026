@@ -1,0 +1,28 @@
+*{
+    cursor: default;
+}
+
+html,body{
+    min-height: 100vh !important;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f9fc;
+}
+
+main{
+    flex: 1;
+    display: flex;
+}
+
+/* .main{
+    height: 100px;
+    flex: 1;
+    background-color: aqua;
+}
+
+.sidebar-cont{
+    flex: 1;
+} */
