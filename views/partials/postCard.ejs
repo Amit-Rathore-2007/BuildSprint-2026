@@ -1,0 +1,99 @@
+<%
+    const safeId = (typeof _id !== "undefined") ? _id : "";
+
+    const safeHashtags =
+        (typeof hashtags !== "undefined" && hashtags) ? hashtags : [];
+
+    const safeImages =
+        (typeof images !== "undefined" && images) ? images : [];
+
+    const tag = safeHashtags.length ? safeHashtags[0] : "#campusbuzz";
+    const img = safeImages.length ? safeImages[0] : null;
+%>
+
+<div class="post-card"
+     data-id="<%= safeId %>"
+     data-hashtag="<%= tag %>">
+
+    <!-- HEADER -->
+    <div class="post-header">
+
+        <div class="user-info">
+            <img src="<%= avatar || '/images/profile.png' %>" class="avatar" />
+
+            <div class="meta">
+                <h4 class="author">
+                    <%= (author && author.username) ? author.username : author || "Anonymous" %>
+                </h4>
+
+                <span class="time">
+                    <%= (typeof createdAt !== "undefined" && createdAt)
+    ? new Date(createdAt).toLocaleString()
+    : "Just now" %>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TITLE -->
+    <div class="post-title">
+        <h3><%= title || "Untitled Post" %></h3>
+    </div>
+
+    <!-- IMAGE -->
+    <% if (img) { %>
+        <div class="post-image">
+            <img src="<%= img %>" alt="post image" />
+        </div>
+    <% } %>
+
+    <!-- DESCRIPTION -->
+    <div class="post-description">
+        <p><%= description || "" %></p>
+    </div>
+
+    <!-- META -->
+    <div class="post-meta">
+
+        <span class="location">
+            📍 <%= location || "Campus" %>
+        </span>
+
+        <span class="hashtag">
+            <%= tag %>
+        </span>
+
+    </div>
+
+    <!-- PARTICIPANTS -->
+    <div class="post-stats">
+
+        <div class="participants">
+            👥 👥 <%= (typeof participants !== "undefined" ? participants : 0) %>
+/ <%= (typeof maxParticipants !== "undefined" ? maxParticipants : 0) %>
+        </div>
+
+        <div class="engagement">
+            ❤️ <%= likes || 0 %>
+            💬 <%= comments || 0 %>
+        </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="post-actions">
+
+        <!-- HASHTAG ROOM -->
+        <button class="tag-btn" data-tag="<%= tag %>">
+            <%= tag %>
+        </button>
+
+        <!-- JOIN ROOM -->
+        <button class="join-btn">
+            Join Room
+        </button>
+
+    </div>
+
+</div>

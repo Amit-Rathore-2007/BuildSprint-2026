@@ -1,0 +1,70 @@
+<div id="createPostModal" class="modal-overlay hidden">
+
+    <div class="modal-box">
+
+        <!-- HEADER -->
+        <div class="modal-header">
+            <h2>Create Campus Buzz Post</h2>
+            <button id="closeModalBtn" class="close-btn">✖</button>
+        </div>
+
+        <!-- FORM -->
+        <form id="createPostForm">
+
+            <!-- TITLE -->
+            <label>Title</label>
+            <input type="text" id="postTitle" placeholder="e.g. Pizza Split at Hostel 4" required>
+
+            <!-- DESCRIPTION -->
+            <label>Description</label>
+            <textarea id="postDescription" rows="3" placeholder="Write something..." required></textarea>
+
+            <!-- CATEGORY -->
+            <label>Category</label>
+            <select id="postCategory">
+                <option value="food">🍕 Food Split</option>
+                <option value="cab">🚖 Cab Split</option>
+                <option value="study">📚 Study</option>
+                <option value="resell">💰 Resell</option>
+                <option value="event">🎉 Event</option>
+                <option value="other">❓ Other</option>
+            </select>
+
+            <!-- LOCATION -->
+            <label>Location</label>
+            <input type="text" id="postLocation" placeholder="e.g. Hostel 4 / Main Gate">
+
+            <!-- MAX PARTICIPANTS -->
+            <label>Max Participants</label>
+            <input type="number" id="postMaxParticipants" min="2" value="5">
+
+            <!-- EXPIRY -->
+            <label>Expiry Time</label>
+            <input type="datetime-local" id="postExpiry">
+
+            <!-- IMAGE UPLOAD -->
+            <label>Upload Images</label>
+            <input type="file" id="postImages" multiple accept="image/*">
+
+            <!-- IMAGE PREVIEW -->
+            <div id="imagePreview" class="image-preview"></div>
+
+            <!-- HASHTAGS -->
+            <label>Hashtags</label>
+            <input type="text" id="postHashtags" placeholder="#food #pizza #hostel">
+
+            <!-- AUTO HASHTAG SUGGESTION -->
+            <div class="auto-tag">
+                Suggested: <span id="autoHashtag">#campusbuzz</span>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" class="publish-btn">
+                Publish Post
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

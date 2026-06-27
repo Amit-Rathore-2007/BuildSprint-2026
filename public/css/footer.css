@@ -1,0 +1,29 @@
+footer{
+    width: 100%;
+    justify-items: center;
+    padding: 10px 20px 15px;
+    background-color: #0D2B66;
+}
+
+footer .copy{
+    color: #FFFFFF;
+}
+
+footer div{
+    margin-top: 8px;
+}
+
+.otherLinks a{
+    margin: 0 2px;
+    color:#94A3B8;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.otherLinks a:hover{
+    border-bottom: 0.5px solid #94A3B8;
+}
+
+.font-size-12{
+    font-size: 14px;
+}

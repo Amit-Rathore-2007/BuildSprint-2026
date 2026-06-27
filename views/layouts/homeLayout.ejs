@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate") %>
+
+<% block("title").append(`<title>Campus Buzz</title>`) %>
+
+<% block("links")
+    .append(`
+        <link href="/homeLayout.css" rel="stylesheet">
+    `)
+%>
+
+<main>
+    <%- include("./sidebar") %>
+    <div class="main">
+        <%- body %>
+    </div>
+</main>
