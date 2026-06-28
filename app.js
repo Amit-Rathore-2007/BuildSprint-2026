@@ -48,42 +48,15 @@ app.use(express.static(path.join(__dirname,"public/assets")))
 
 // --- Connecting to Database --- //
 
-// const MONGO_URL = "mongodb+srv://gameramitgaming_db_user:LHyTbq9Rv4d28yVj@cluster0.nnetrug.mongodb.net/?appName=Cluster0";
+const MONGO_URL = "mongodb://gameramitgaming_db_user:LHyTbq9Rv4d28yVj@ac-f7xoeow-shard-00-00.nnetrug.mongodb.net:27017,ac-f7xoeow-shard-00-01.nnetrug.mongodb.net:27017,ac-f7xoeow-shard-00-02.nnetrug.mongodb.net:27017/?ssl=true&replicaSet=atlas-eskuz2-shard-0&authSource=admin&appName=Cluster0";
 
-// main()
-// .then(() => console.log("Connected to Database"))
-// .catch(err => console.log(err))
+main()
+.then(() => console.log("Connected to Database"))
+.catch(err => console.log(err))
 
-// async function main() {
-//     await mongoose.connect(MONGO_URL)
-// }
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb://gameramitgaming_db_user:LHyTbq9Rv4d28yVj@ac-f7xoeow-shard-00-00.nnetrug.mongodb.net:27017,ac-f7xoeow-shard-00-01.nnetrug.mongodb.net:27017,ac-f7xoeow-shard-00-02.nnetrug.mongodb.net:27017/?ssl=true&replicaSet=atlas-eskuz2-shard-0&authSource=admin&appName=Cluster0";
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+async function main() {
+    await mongoose.connect(MONGO_URL)
 }
-run().catch(console.dir);
-
 
 // --- API --- //
 
