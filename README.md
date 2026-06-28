@@ -1,6 +1,8 @@
 # Campus Buzz — Campus Coordination Platform
 
 This repository contains our solution for **BuildSprint**, focused on building scalable, real-world platforms that solve campus coordination and recruitment challenges.
+
+[Deployed Website](https://buildsprint-2026.onrender.com)
   
 ## Description
 
